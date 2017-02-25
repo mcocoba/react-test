@@ -19,7 +19,12 @@ var animals = [
     "penguin"
 ];
 
-var ingredients = [{"id":1,"text":"ham"}, {"id":2,"text":"cheese"},{"id":3,"text":"potatoes"}];
+var ingredients = [
+  {"id":1,"text":"ham"},
+  {"id":2,"text":"cheese"},
+  {"id":3,"text":"potatoes"},
+  {"id":4,"text":"onions"}
+];
 
 app.get('/animals', function(req, res) {
     res.send(animals);
@@ -27,6 +32,13 @@ app.get('/animals', function(req, res) {
 
 app.get('/ingredients', function(req, res) {
     res.send(ingredients);
+});
+
+app.post('/ingredients',function(req,res){
+  var ingredient = req.body;
+  console.log(req.body);
+  ingredients.push(ingredient);
+  res.status(200).send("Successfully posted ingredientttt");
 });
 
 app.listen(6060);
