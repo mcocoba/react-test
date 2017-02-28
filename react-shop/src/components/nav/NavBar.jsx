@@ -1,5 +1,7 @@
 var React = require('react');
-var NavItem = require('./Navitem.jsx');
+var NavItem = require('./NavItem.jsx');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var NavBar = React.createClass({
   render: function(){
@@ -17,7 +19,7 @@ var NavBar = React.createClass({
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="">Product Shoper</a>
+            <Link className="navbar-brand" to="/">Product Shoper</Link>
           </div>
           <div className="collapse navbar-collapse" id="nav-collapse">
             <ul className="nav navbar-nav">{this.props.navData.map(createLinkItem)}</ul>
